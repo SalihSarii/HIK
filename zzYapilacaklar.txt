@@ -1,1 +1,10 @@
 1-) Yardım bölümü müşteri Hizmetleri dropdown'ı silinecek
+2-)indexe çekilen kaynaklar türüne göre seçilip cartlara aktarılacak
+3)kaynak talebi ekle
+4)yardım talebi ekle
+5)    kaynakArama sayfasına kaynaklar tuşu ile gidilirse tüm kaynakları listele
+6)    kaynakArama sayfasına anasayfanın metin kutusundan gidilirse title arayarak listele
+7)    kaynakArama sayfasına kaynakArama sayfasının metin kutusu ile gidilirse üsttekini tekrarla
+8)    kılavuzu indir nav'ı nasıl yapılıyor bak
+9) Kayıt ol butonu ile kullanıcı ekle
+10) giriş yap butonu ile kullanıcı bilgilerini karşılaştır

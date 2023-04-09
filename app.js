@@ -6,6 +6,7 @@ const ejs = require("ejs")
 const path = require("path");
 const fs = require('fs');
 const pageController = require('./controllers/pageController');
+const kaynakController = require('./controllers/kaynakController');
 
 
 const app = express();
@@ -28,11 +29,13 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
 //ROUTES
-app.get('/',pageController.getIndexPage);
+app.get('/',kaynakController.getAllKaynak);
 app.get('/kaynakArama',pageController.getKaynakAramaPage);
 app.get('/kaynakTalebi', pageController.getKaynakTalebiPage);
 app.get('/yardim', pageController.getYardimPage);
 app.get('/profil', pageController.getProfilPage);
+
+
 
 
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const schema = mongoose.Schema;
 
-const KaynakSchema = new Schema({
+const KaynakSchema = new schema({
     img:String,
     baslik:String,
     yazar:String,
@@ -10,6 +10,7 @@ const KaynakSchema = new Schema({
     basimYili:String,    
     ciltNo:String,
     baskiNo:String,
+    indirilmeSayisi:Number,
     olusturulmaTarihi:{
         type:Date,
         default:Date.now()
