@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+    <title>Herkes İçin Kütüphane</title>
+  </head>
+
+  <body>
+    <!--          Header
+    TODO: Kılavuz - Yardım/talep - Ticketlar (droprown olmıcak)
+    TODO: Logo eklenicek renkler değiştirilebilir (Arkaplan )-->
+    <%- include('partials/_navigation') -%>
+    <div class="row">
+      <div class="container text-center logo">
+        <img
+          src="Icons/Koyu Gri Turuncu Perakende Logo.gif"
+          alt="logo"
+          class="rounded mx-auto d-block"
+          width="300"
+        />
+      </div>
+    </div>
+  </div>
+</header>
+    <!-- Arama -->
+    <div class="row">
+      <div class="container text-center">
+        <div class="input-group">
+          <div
+            class="form-floating mb-3"
+            style="max-width: 584px !important; margin-left: auto"
+          >
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInputArama"
+              placeholder="Kaynak ara"
+              onkeypress="AramayaYonlendir();"
+            />
+            <label for="floatingInputArama">Ara</label>
+          </div>
+          <button
+            type="button"
+            class="btn btn-secondary mb-3"
+            style="margin-right: auto"
+          >
+            ARA
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Cardlar -->
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="card" style="width: 18rem">
+            <img src="..." class="card-img-top" alt="..."  />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-secondary">İndir</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          
+          <div class="card" style="width: 18rem">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-secondary">İndir</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card" style="width: 18rem">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-secondary">İndir</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card" style="width: 18rem">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-secondary">İndir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
+    <!-- Scriptler -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="/JS/login.js"></script>
+    <script src="/JS/arama.js"></script>
+  </body>
+</html>

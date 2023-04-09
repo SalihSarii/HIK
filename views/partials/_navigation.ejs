@@ -1,0 +1,231 @@
+<header>
+    <div class="row">
+      <div class="col-4">
+        <!--NavBar-->
+        <div class="container">
+          <ul class="nav nav-tabs">
+            <li class="nav-item active">
+              <a
+                class="nav-link navbarBaslik"
+                aria-current="page"
+                href="/"
+              >
+                <img src="Icons/homebutton.png" alt="" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navbarBaslik"
+                aria-current="page"
+                href="/kaynakArama"
+              >
+                <div>Kaynaklar</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navbarBaslik"
+                aria-current="page"
+                href="/kaynakTalebi"
+              >
+                <div>Kaynak Talebi</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navbarBaslik"
+                aria-current="page"
+                href="/yardim"
+              >
+                <div>Yardım</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navbarBaslik"
+                aria-current="page"
+                href="#"
+              >
+                <div>Kılavuzu İndir</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-8 justify-content-end">
+        <div class="container">
+          <div class="list-group list-group-horizontal justify-content-end">
+            <div class="dropdown text-end mt-2" id="profil" style="display: none;">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="/profil">Profili Düzenle</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" onclick="cikis();">Çıkış Yap</a></li>
+              </ul>
+            </div>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action list-group-item-dark flex-wrap kullanici"
+              data-bs-toggle="modal"
+              data-bs-target="#kayitOl"
+              id="btnKayitOl"
+            >
+              <img src="Icons/sign-up.png" alt="" /> Kayıt Ol
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action flex-wrap kullanici"
+              data-bs-toggle="modal"
+              data-bs-target="#girisYap"
+              id="btnGirisYap"
+            >
+              <img src="Icons/log-in.png" alt="" /> Giriş Yap
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action list-group-item-dark flex-wrap kullanici"
+            >
+              TR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Kayıt ol modalı -->
+    <div>
+      <div
+        class="modal fade"
+        id="kayitOl"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Kayıt Ol</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInputKullanici"
+                    placeholder="Kullanıcı Adı"
+                  />
+                  <label for="floatingInputAdSoyad">Kullanıcı Adı</label>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInputAdSoyad"
+                  placeholder="Ad Soyad"
+                />
+                <label for="floatingInputAdSoyad">Ad ve Soyad</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInputEmail"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInputEmail">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="floatingInputPassword"
+                  placeholder="Password"
+                />
+                <label for="floatingInputPassword">Şifre</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <label for="katitOlModali">Zaten kayıtlı mısınız? <a href="#" id="girisYapinLink" onclick="girisYapaGit();"> Giriş Yapın</a></label>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                İptal
+              </button>
+              <button type="button" class="btn btn-primary" onclick="Onay();">
+                Kayıt Ol
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Giriş yap modalı -->
+      <div
+        class="modal fade"
+        id="girisYap"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Giriş Yap</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInputEmailG"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInputEmailG">Email</label>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="floatingInputPasswordG"
+                  placeholder="Password"
+                />
+                <label for="floatingInputPasswordG">Şifre</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <label for="katitOlModali">Hesabınız yok mu ?<a href="#" id="kayitOlunLink" onclick="kayitOlunaGit();"> Kayıt olun</a></label>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                İptal
+              </button>
+              <button type="button" class="btn btn-primary" onclick="girisYap();">Giriş Yap</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      

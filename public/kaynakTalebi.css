@@ -1,0 +1,12 @@
+.formlar{
+    border: 1px solid #E2BAA1;
+    border-radius: 2%;
+    max-width: 784px;
+}
+.btnGonder{
+    border-color: #E2BAA1;
+    color:#E2BAA1 !important;
+}
+.renkler {
+    color: #E2BAA1;
+}

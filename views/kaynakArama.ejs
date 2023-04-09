@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/kaynakArama.css" />
+    <title>Herkes İçin Kütüphane</title>
+  </head>
+  <body>
+    <%- include('partials/_navigation') -%>
+    <!-- MAIN -->
+    <div class="main">
+      <!-- Sidebar -->
+      <div class="row">
+        <div class="col-auto ">
+          <div class="flex-shrink-0 p-3 bg-white sticky-top" style="width: 280px">
+            <div class="renkler"></div>
+            <div
+              class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+            >
+              <svg class="bi me-2" width="30" height="24">
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+              <span class="fs-5 fw-semibold renkler">Filtreleme</span>
+            </div>
+            <ul class="list-unstyled ps-0">
+              <li class="mb-1">
+                <button
+                  class="btn btn-toggle align-items-center rounded collapsed renkler"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#kaynakTuru"
+                  aria-expanded="true"
+                >
+                  Kaynak Türü
+                </button>
+                <div class="collapse show" id="kaynakTuru">
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Ders Kitabı
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Okuma Kitabı
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Sesli Kitap
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Diğer İçerikler
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li class="border-top my-3"></li>
+              <li class="mb-1">
+                <button
+                  class="btn btn-toggle align-items-center rounded collapsed renkler"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#kaynakYazari"
+                  aria-expanded="false"
+                >
+                  Kaynağın Yazarı
+                </button>
+                <div class="collapse" id="kaynakYazari">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      <!-- database en alınacak -->
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li class="border-top my-3"></li>
+              <li class="mb-1">
+                <button
+                  class="btn btn-toggle align-items-center rounded collapsed renkler"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#kaynakYili"
+                  aria-expanded="false"
+                >
+                  Yılı
+                </button>
+                <div class="collapse" id="kaynakYili">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      <!-- database den alınacak -->
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li class="border-top my-3"></li>
+              <li class="mb-1">
+                <button
+                  class="btn btn-toggle align-items-center rounded collapsed renkler"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#ciltNo"
+                  aria-expanded="false"
+                >
+                  Cilt No
+                </button>
+                  <div class="collapse" id="ciltNo">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        <!-- database den alınacak -->
+                      </label>
+                    </div>
+                  </div>
+              </li>
+              <li class="border-top my-3"></li>
+              <li class="mb-1">
+                <button
+                  class="btn btn-toggle align-items-center rounded collapsed renkler"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#baskiNo"
+                  aria-expanded="false"
+                >
+                  Baskı No
+                </button>
+                  <div class="collapse" id="baskiNo">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        <!-- database den alınacak -->
+                      </label>
+                    </div>
+                  </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="kartlar">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="..."
+                    class="img-fluid rounded-start"
+                    alt="..."
+                    style="max-height: 200px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Kaynak başlığı</h5>
+                    <p class="card-text">Yazar</p>
+                    <p class="card-text">Türü</p>
+                    <p class="card-text">Dil</p>
+                    <p class="card-text">Tarih</p>
+                    <p class="card-text">Cilt no</p>
+                    <p class="card-text">Baskı no</p>
+                    <p class="card-text">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kartlar">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="..."
+                    class="img-fluid rounded-start"
+                    alt="..."
+                    style="max-height: 200px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Kaynak başlığı</h5>
+                    <p class="card-text">Yazar</p>
+                    <p class="card-text">Türü</p>
+                    <p class="card-text">Dil</p>
+                    <p class="card-text">Tarih</p>
+                    <p class="card-text">Cilt no</p>
+                    <p class="card-text">Baskı no</p>
+                    <p class="card-text">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kartlar">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="..."
+                    class="img-fluid rounded-start"
+                    alt="..."
+                    style="max-height: 200px;"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Kaynak başlığı</h5>
+                    <p class="card-text">Yazar</p>
+                    <p class="card-text">Türü</p>
+                    <p class="card-text">Dil</p>
+                    <p class="card-text">Tarih</p>
+                    <p class="card-text">Cilt no</p>
+                    <p class="card-text">Baskı no</p>
+                    <p class="card-text">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kartlar">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="..."
+                    class="img-fluid rounded-start"
+                    alt="..."
+                    style="max-height: 200px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Kaynak başlığı</h5>
+                    <p class="card-text">Yazar</p>
+                    <p class="card-text">Türü</p>
+                    <p class="card-text">Dil</p>
+                    <p class="card-text">Tarih</p>
+                    <p class="card-text">Cilt no</p>
+                    <p class="card-text">Baskı no</p>
+                    <p class="card-text">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
+    <!-- Scriptler -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script defer src="/JS/login.js"></script>
+  </body>
+</html>

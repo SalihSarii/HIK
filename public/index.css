@@ -1,0 +1,23 @@
+
+.kullanici{
+    margin-right: 5px;
+    margin-bottom: 10px;
+    height: auto;
+    width: auto;
+    color: #E2BAA1;
+    background-color: #2D2316;
+}
+.navbarBaslik{
+    color: #E2BAA1;
+}
+body {
+    background-color: #2D2316;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #E2BAA1;
+    text-align: center;
+  }
