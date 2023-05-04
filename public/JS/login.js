@@ -2,8 +2,9 @@ var adSoyad = document.getElementById("floatingInputAdSoyad").value,
     kullaniciAdi = document.getElementById("floatingInputKullanici").value,
     email = document.getElementById("floatingInputEmail").value,
     sifre = document.getElementById("floatingInputPassword").value;
+
 var girisYapildi = localStorage.getItem('girisDegeri');
-console.log(girisYapildi);
+//console.log(girisYapildi);
 if(girisYapildi == "true"){
     kullaniciProfili();
 }

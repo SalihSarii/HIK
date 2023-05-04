@@ -1,0 +1,31 @@
+kaynakTalebi idler(
+    kaynak başlığı = inpKaynakBasligi
+    kaynak türü: slcTurler
+    basım  yılı: inpKaynakYili
+    
+)
+
+idleri yazmış olman neyi sağlayacak ?
+
+idleri ben de alabilirim o sorun değil
+
+idlerden veri çekmek sıkıntı
+
+form olduğu zaman post metodu ile form içindeki verileri gönderiyorum
+
+oke broblem?
+forma çevirebilir misin onları
+gerek yok Ki
+id leri kullanarak içine atabilirsin
+getle bi değişkene atarsın
+document.elementid("id").value = değişken dersin çözülür bbroblem
+doğru bak bunu unutmuşum 
+ben bakayım bi 
+bu document ile yazma işini nereye yapmak lazım ?
+js içine mi?
+yep 
+
+tamamdır bir bakayım
+sen js ye gel ben de yazarım document işini istersen
+jsleri doldururken ben de seni izlerim bi yandan
+broblem çıkarsa yardımcı olmaya çalışırım

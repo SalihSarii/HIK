@@ -1,19 +1,19 @@
 exports.getIndexPage = (req,res)=>{
-    res.render('index');
+    res.status(200).render('index');
 };
 
 exports.getKaynakAramaPage = (req,res)=>{
-    res.render('kaynakArama');
+    res.status(200).render('kaynakArama');
 };
 
 exports.getKaynakTalebiPage = (req,res)=>{
-    res.render('kaynakTalebi');
+    res.status(200).render('kaynakTalebi');
 };
 
 exports.getYardimPage = (req,res)=>{
-    res.render('yardim');
+    res.status(200).render('yardim2');
 };
 
 exports.getProfilPage = (req,res)=>{
-    res.render('profil');
+    res.status(200).render('profil');
 };
