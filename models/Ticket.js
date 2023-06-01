@@ -5,6 +5,7 @@ const TicketSchema = new schema({
     email:String,
     konu:String,
     sorun:String,
+    cevapDurumu:String,
     olusturulmaTarihi:{
         type:Date,
         default:Date.now()

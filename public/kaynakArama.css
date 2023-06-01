@@ -10,3 +10,13 @@
     background-color: #2D2316;
     color: #764927;
 }
+.buton{
+    border-top: 1px solid rgba(0,0,0,.25);
+}
+.btn-outline-secondary{
+    color: #764927;
+}
+.btn-outline-secondary:hover{
+    background-color: #764927;
+    color: #E2BAA1;
+}

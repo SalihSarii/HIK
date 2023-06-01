@@ -25,7 +25,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link navbarBaslik" aria-current="page" href="#">
+            <a class="nav-link navbarBaslik" aria-current="page" href="http://127.0.0.1:8887/HIK/public/uploads/kullanimKilavuzu/Herkes-Icin-Kutuphane-Kilavuzu.pdf">
               <div>Kılavuzu İndir</div>
             </a>
           </li>
@@ -42,23 +42,24 @@
               <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-              <li><a class="dropdown-item" href="/profil">Profili Düzenle</a></li>
+              <li><form method="get" action="/profil">
+                <input type="hidden" id="emailProfil" name="email" value="">
+                <button type="submit" id="btnEmailP"  class="dropdown-item" onclick="emailIlet();">Profili Düzenle</button>
+                </form></li>
+              <!-- <li><a class="dropdown-item" href="/profil">Profili Düzenle</a></li> -->
               <li>
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="#" onclick="cikis();">Çıkış Yap</a></li>
             </ul>
           </div>
-          <button type="button" class="list-group-item list-group-item-action list-group-item-dark flex-wrap kullanici"
+          <button type="button" class="list-group-item list-group-item-action flex-wrap kullanici"
             data-bs-toggle="modal" data-bs-target="#kayitOl" id="btnKayitOl">
             <img src="Icons/sign-up.png" alt="" /> Kayıt Ol
           </button>
           <button type="button" class="list-group-item list-group-item-action flex-wrap kullanici"
             data-bs-toggle="modal" data-bs-target="#girisYap" id="btnGirisYap">
             <img src="Icons/log-in.png" alt="" /> Giriş Yap
-          </button>
-          <button type="button" class="list-group-item list-group-item-action list-group-item-dark flex-wrap kullanici">
-            TR
           </button>
         </div>
       </div>
@@ -76,25 +77,30 @@
           </div>
           <div class="modal-body">
             <!-- <div class="input-group mb-3"> -->
-            <form method="post" action="/kullaniciKayit">
+            <form method="post" action="/">
               <span class="input-group-text" id="basic-addon1">@</span>
               <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputKullanici" name="kullaniciAdi" placeholder="Kullanıcı Adı" required />
+                <input type="text" class="form-control" id="floatingInputKullanici" name="kullaniciAdi"
+                  placeholder="Kullanıcı Adı" required />
                 <label for="floatingInputAdSoyad">Kullanıcı Adı</label>
               </div>
               <!-- </div> -->
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInputAdSoyad" name="adSoyad" placeholder="Ad Soyad" required/>
+                <input type="text" class="form-control" id="floatingInputAdSoyad" name="adSoyad" placeholder="Ad Soyad"
+                  required />
                 <label for="floatingInputAdSoyad">Ad ve Soyad</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInputEmail" name="email" placeholder="name@example.com" required/>
+                <input type="email" class="form-control" id="floatingInputEmail" name="email"
+                  placeholder="name@example.com" required />
                 <label for="floatingInputEmail">Email</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingInputPassword" name="sifre" placeholder="Password" required/>
+                <input type="password" class="form-control" id="floatingInputPassword" name="sifre"
+                  placeholder="Password" required />
                 <label for="floatingInputPassword">Şifre</label>
-              </div>            
+              </div>
+              <input type="hidden" name="girisTuru" value="kayit">
           </div>
           <div class="modal-footer">
             <label for="katitOlModali">Zaten kayıtlı mısınız? <a href="#" id="girisYapinLink" onclick="girisYapaGit();">
@@ -102,12 +108,12 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               İptal
             </button>
-            <button type="submit" class="btn btn-primary" >
+            <button type="submit" class="btn btn-primary">
               Kayıt Ol
             </button>
             <!-- onclick="Onay();" -->
           </div>
-        </form>
+          </form>
         </div>
       </div>
     </div>
@@ -121,23 +127,31 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInputEmailG" placeholder="name@example.com" />
-              <label for="floatingInputEmailG">Email</label>
-            </div>
-            <div class="form-floating">
-              <input type="password" class="form-control" id="floatingInputPasswordG" placeholder="Password" />
-              <label for="floatingInputPasswordG">Şifre</label>
-            </div>
+            <form method="post" action="/" >
+              <!-- method="post" action="/" -->
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInputEmailG" name="email" required
+                  placeholder="name@example.com"  />
+                <label for="floatingInputEmailG">Email</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingInputPasswordG" name="sifre" required
+                  placeholder="Password"  />
+                <label for="floatingInputPasswordG">Şifre</label>
+              </div>
+              <input type="hidden" name="girisTuru" value="giris">
           </div>
+
           <div class="modal-footer">
             <label for="katitOlModali">Hesabınız yok mu ?<a href="#" id="kayitOlunLink" onclick="kayitOlunaGit();">
                 Kayıt olun</a></label>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               İptal
             </button>
-            <button type="button" class="btn btn-primary" onclick="girisYap();">Giriş Yap</button>
+            <button type="submit" class="btn btn-primary" onclick="girisYap();">Giriş Yap</button>
+            <!-- onclick="girisYap();" -->
           </div>
+          </form>
         </div>
       </div>
     </div>

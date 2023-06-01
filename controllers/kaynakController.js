@@ -2,7 +2,7 @@ const { query } = require("express");
 const Kaynak = require("../models/Kaynak");
 
 exports.getAllKaynak = async (req,res)=>{
-    await Kaynak.updateMany()
+    // await Kaynak.updateMany()
     let kaynaklar = await Kaynak.find({})   
     let baslik = req.query.baslik
     let _query= req.query
@@ -12,22 +12,8 @@ exports.getAllKaynak = async (req,res)=>{
     _query = JSON.parse(_query)
     console.log(_query) 
     if(_query){
-         kaynaklar = await Kaynak.find(_query).sort('yazar')
-    //    kaynaklar = await Kaynak.find({
-    //     baslik:req.query.baslik,
-    //     kaynakturu:req.query.kaynakturu,
-    //     yazar:req.query.yazar,
-    //     basimYili:req.query.basimYili,
-    //     ciltNo:req.query.ciltNo,
-    //     baskiNo:req.query.baskiNo,
-    //     dil:req.query.dil
-    // }).sort('indirilmeSayisi')      
-    
-    
-   
-    //    console.log("if else 1")
-    }   
-    
+         kaynaklar = await Kaynak.find(_query).sort('yazar')   
+    }       
 
     res.render('kaynakArama',{
         kaynaklar,
@@ -36,6 +22,7 @@ exports.getAllKaynak = async (req,res)=>{
 };
 
 exports.getAllKaynakIndex = async (req,res)=>{
+    var girisYapildi="2";
     const kaynakDers = await Kaynak.find({kaynakturu:"Ders Kitabı"}).sort('-indirilmeSayisi').limit(3)   
     const kaynakOkuma = await Kaynak.find({kaynakturu:"Okuma Kitabı"}).sort('-indirilmeSayisi').limit(3)
     const kaynakSesli = await Kaynak.find({kaynakturu:"Sesli Kitap"}).sort('-indirilmeSayisi').limit(3)
@@ -44,7 +31,8 @@ exports.getAllKaynakIndex = async (req,res)=>{
         kaynakDers,
         kaynakOkuma,
         kaynakSesli,
-        kaynakDiger
+        kaynakDiger,
+        girisYapildi
     })
 };
 

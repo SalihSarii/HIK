@@ -3,6 +3,7 @@ const schema = mongoose.Schema;
 
 const KaynakSchema = new schema({
     img:String,
+    pdf:String,
     baslik:String,
     yazar:String,
     kaynakturu:String,

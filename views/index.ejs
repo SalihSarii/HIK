@@ -60,7 +60,7 @@
                   <h5 class="card-title">İndirilme Sayısı:<%=ders.indirilmeSayisi%>
                   </h5>
                   <p class="card-text"></p>
-                  <a href="#" class="btn btn-secondary">İndir</a>
+                  <a href="<%=ders.pdf%>" class="btn btn-secondary">İndir</a>
                 </div>
               </div>
               <% }); %>
@@ -81,7 +81,7 @@
                   <h5 class="card-title">İndirilme Sayısı:<%=okuma.indirilmeSayisi%>
                   </h5>
                   <p class="card-text"></p>
-                  <a href="#" class="btn btn-secondary">İndir</a>
+                  <a href="<%=okuma.pdf%>" class="btn btn-secondary">İndir</a>
                 </div>
               </div>
               <% }); %>
@@ -101,7 +101,7 @@
                   <h5 class="card-title">İndirilme Sayısı:<%=sesli.indirilmeSayisi%>
                   </h5>
                   <p class="card-text"></p>
-                  <a href="#" class="btn btn-secondary">İndir</a>
+                  <a href="<%=sesli.pdf%>" class="btn btn-secondary">İndir</a>
                 </div>
               </div>
               <% }); %>
@@ -121,13 +121,20 @@
                     <h5 class="card-title">İndirilme Sayısı:<%=diger.indirilmeSayisi%>
                     </h5>
                     <p class="card-text"></p>
-                    <a href="#" class="btn btn-secondary">İndir</a>
+                    <a href="<%=diger.pdf%>" class="btn btn-secondary">İndir</a>
                   </div>
                 </div>
                 <% }); %>
             </div>
           </div>
         </div>
+        <%if( girisYapildi != '2'){ %>
+          <input id="girisYapildiKontrol" type="hidden" value="<%= girisYapildi%>">
+          <%}else{%>
+            <input id="girisYapildiKontrol" type="hidden" value="">
+            <%}%>
+        <!-- if(document.getElementById('girisYapildiKontrol').value== null){ document.getElementById('girisYapildiKontrol').value="";}  -->
+        
         <!-- Footer -->
         <footer class="footer">
           <div class="container">
@@ -135,6 +142,22 @@
           </div>
         </footer>
         <!-- Scriptler -->
+        <script>
+            var veri = localStorage.getItem('girisDegeri');
+            console.log(veri)
+            if(veri == "false"){
+            var oke = document.getElementById('girisYapildiKontrol').value;
+                        
+            if(oke=="true"){
+              localStorage.setItem("girisDegeri","true");
+              // console.log(oke);
+            }else {
+              localStorage.setItem("girisDegeri","false");
+              // console.log(oke);
+          };
+        }
+          
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script defer src="/JS/login.js"></script>
