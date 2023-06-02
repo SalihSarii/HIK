@@ -32,17 +32,14 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
 //ROUTES
- //app.get('/',pageController.getIndexPage);
 app.get('/',kaynakController.getAllKaynakIndex);
 app.get('/kaynakArama',kaynakController.getAllKaynak);
 app.get('/kaynakArama/:kaynakturu',kaynakController.getFiltreKaynak);
-//app.get('/kaynakArama:baslik',kaynakController.getKaynak);
 app.get('/kaynakTalebi', pageController.getKaynakTalebiPage);
 app.get('/yardim', pageController.getYardimPage);
 app.get('/profil', pageController.getProfilPage);
 
 app.post('/', kullaniciController.kullaniciKayıtGiris);
-// app.post('/',kullaniciController.kullaniciGiris);
 app.post('/kaynakTalep', talepController.addKaynakTalep)
 app.post('/ticket',ticketController.addTicket)
 app.post('/profil', kullaniciController.profilDuzenle)

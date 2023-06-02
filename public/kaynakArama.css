@@ -20,3 +20,8 @@
     background-color: #764927;
     color: #E2BAA1;
 }
+.frame {
+    height: 300px;
+    background: transparent no-repeat center;
+    background-size: contain;
+  }

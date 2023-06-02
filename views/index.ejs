@@ -13,9 +13,7 @@
 </head>
 
 <body>
-  <!--          Header
-    TODO: Kılavuz - Yardım/talep - Ticketlar (droprown olmıcak)
-    TODO: Logo eklenicek renkler değiştirilebilir (Arkaplan )-->
+  <!--          Header -->
   <%- include('partials/_navigation') -%>
     <div class="row">
       <div class="container text-center logo">
@@ -31,11 +29,9 @@
           <div class="input-group">
             <div class="form-floating mb-3" style="max-width: 584px !important; margin-left: auto">
               <input type="text" class="form-control" placeholder="Kaynak ara" name="baslik" id="submit" />
-              <!-- <input type="hidden" class="form-control" placeholder="Kaynak ara" name="baslik" value="Sed auctor odio a purus. Duis elementum, dui" id="submit" /> -->
-              <!-- onkeypress="AramayaYonlendir();"-->
               <label for="floatingInputArama">Ara</label>
             </div>
-            <button type="submit" class="btn btn-secondary mb-3 " style="margin-right: auto">
+            <button type="submit" class="btn btn-outline-secondary mb-3 border-0 " style="margin-right: auto">
               ARA
             </button>
           </div>
@@ -43,24 +39,24 @@
       </div>
     </div>
     <!-- Cardlar -->
-
     <div class="container">
       <div class="row">
         <div class="col-3">
           <div class="row">
             <%kaynakDers.forEach(function(ders){%>
-              <div class="card" style="width: 18rem">
-                <img src="<%=ders.img%>" class="card-img-top" alt="..." />
+              <div class="card mb-3" style="width: 18rem; height: 500px;">
+                <div class="frame" style="background-image: url('<%=ders.img%>');"></div>
                 <div class="card-body margin-left-auto">
                   <h5 class="card-title">
                     <%=ders.baslik%>
                   </h5>
-                  <h5 class="card-title">Tür:<%=ders.kaynakturu%>
-                  </h5>
-                  <h5 class="card-title">İndirilme Sayısı:<%=ders.indirilmeSayisi%>
-                  </h5>
-                  <p class="card-text"></p>
-                  <a href="<%=ders.pdf%>" class="btn btn-secondary">İndir</a>
+                  <p class="card-text"><b>Tür:</b> <%=ders.kaynakturu%>
+                  </p>
+                  <p class="card-text"><b>İndirilme Sayısı:</b> <%=ders.indirilmeSayisi%>
+                  </p>
+                  <div class="buton text-center">
+                    <a href="<%=ders.pdf%>" class="btn btn-outline-secondary btn-lg">İndir</a>
+                  </div>
                 </div>
               </div>
               <% }); %>
@@ -70,18 +66,19 @@
         <div class="col-3 ">
           <div class="row">
             <%kaynakOkuma.forEach(function(okuma){%>
-              <div class="card" style="width: 18rem">
-                <img src="<%=okuma.img%>" class="card-img-top" alt="..." />
+              <div class="card mb-3" style="width: 18rem; height: 500px;">
+                <div class="frame card-img-top" style="background-image: url('<%=okuma.img%>');"></div>
                 <div class="card-body margin-left-auto">
                   <h5 class="card-title">
                     <%=okuma.baslik%>
                   </h5>
-                  <h5 class="card-title">Tür:<%=okuma.kaynakturu%>
-                  </h5>
-                  <h5 class="card-title">İndirilme Sayısı:<%=okuma.indirilmeSayisi%>
-                  </h5>
-                  <p class="card-text"></p>
-                  <a href="<%=okuma.pdf%>" class="btn btn-secondary">İndir</a>
+                  <p class="card-text"><b>Tür:</b> <%=okuma.kaynakturu%>
+                  </p>
+                  <p class="card-text"><b>İndirilme Sayısı:</b> <%=okuma.indirilmeSayisi%>
+                  </p>
+                  <div class="buton text-center">
+                    <a href="<%=okuma.pdf%>" class="btn btn-outline-secondary btn-lg">İndir</a>
+                  </div>
                 </div>
               </div>
               <% }); %>
@@ -90,18 +87,19 @@
         <div class="col-3">
           <div class="row">
             <%kaynakSesli.forEach(function(sesli){%>
-              <div class="card" style="width: 18rem">
-                <img src="<%=sesli.img%>" class="card-img-top" alt="..." />
+              <div class="card mb-3" style="width: 18rem; height: 500px;">
+                <div class="frame card-img-top" style="background-image: url('<%=sesli.img%>');"></div>
                 <div class="card-body margin-left-auto">
                   <h5 class="card-title">
                     <%=sesli.baslik%>
                   </h5>
-                  <h5 class="card-title">Tür:<%=sesli.kaynakturu%>
-                  </h5>
-                  <h5 class="card-title">İndirilme Sayısı:<%=sesli.indirilmeSayisi%>
-                  </h5>
-                  <p class="card-text"></p>
-                  <a href="<%=sesli.pdf%>" class="btn btn-secondary">İndir</a>
+                  <p class="card-text"><b>Tür:</b> <%=sesli.kaynakturu%>
+                  </p>
+                  <p class="card-text"><b>İndirilme Sayısı:</b> <%=sesli.indirilmeSayisi%>
+                  </p>
+                  <div class="buton text-center">
+                    <a href="<%=sesli.pdf%>" class="btn btn-outline-secondary btn-lg">İndir</a>
+                  </div>
                 </div>
               </div>
               <% }); %>
@@ -110,18 +108,19 @@
           <div class="col-3">
             <div class="row">
               <%kaynakDiger.forEach(function(diger){%>
-                <div class="card" style="width: 18rem">
-                  <img src="<%=diger.img%>" class="card-img-top" alt="..." />
+                <div class="card mb-3" style="width: 18rem; height: 500px;">
+                <div class="frame card-img-top" style="background-image: url('<%=diger.img%>');"></div>
                   <div class="card-body margin-left-auto">
                     <h5 class="card-title">
                       <%=diger.baslik%>
                     </h5>
-                    <h5 class="card-title">Tür:<%=diger.kaynakturu%>
-                    </h5>
-                    <h5 class="card-title">İndirilme Sayısı:<%=diger.indirilmeSayisi%>
-                    </h5>
-                    <p class="card-text"></p>
-                    <a href="<%=diger.pdf%>" class="btn btn-secondary">İndir</a>
+                   <p class="card-text"><b>Tür:</b> <%=diger.kaynakturu%>
+                   </p>
+                   <p class="card-text"><b>İndirilme Sayısı:</b> <%=diger.indirilmeSayisi%>
+                   </p>
+                   <div class="buton text-center">
+                     <a href="<%=diger.pdf%>" class="btn btn-outline-secondary btn-lg">İndir</a>
+                   </div>
                   </div>
                 </div>
                 <% }); %>
@@ -132,15 +131,9 @@
           <input id="girisYapildiKontrol" type="hidden" value="<%= girisYapildi%>">
           <%}else{%>
             <input id="girisYapildiKontrol" type="hidden" value="">
-            <%}%>
-        <!-- if(document.getElementById('girisYapildiKontrol').value== null){ document.getElementById('girisYapildiKontrol').value="";}  -->
+            <%}%>       
         
-        <!-- Footer -->
-        <footer class="footer">
-          <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-          </div>
-        </footer>
+       
         <!-- Scriptler -->
         <script>
             var veri = localStorage.getItem('girisDegeri');
@@ -149,19 +142,16 @@
             var oke = document.getElementById('girisYapildiKontrol').value;
                         
             if(oke=="true"){
-              localStorage.setItem("girisDegeri","true");
-              // console.log(oke);
+              localStorage.setItem("girisDegeri","true");              
             }else {
-              localStorage.setItem("girisDegeri","false");
-              // console.log(oke);
+              localStorage.setItem("girisDegeri","false");              
           };
         }
           
         </script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script defer src="/JS/login.js"></script>
-        <script src="/JS/arama.js"></script>
+        <script defer src="/JS/login.js"></script>        
 </body>
 
 </html>

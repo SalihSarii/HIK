@@ -25,7 +25,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link navbarBaslik" aria-current="page" href="http://127.0.0.1:8887/HIK/public/uploads/kullanimKilavuzu/Herkes-Icin-Kutuphane-Kilavuzu.pdf">
+            <a class="nav-link navbarBaslik" aria-current="page" href="https://raw.githubusercontent.com/SalihSarii/HIK/1c5644184c0799fa3a68833d29334a9a31a332d2/public/uploads/kullanimKilavuzu/Herkes-Icin-Kutuphane-Kilavuzu.pdf">
               <div>Kılavuzu İndir</div>
             </a>
           </li>
@@ -45,8 +45,7 @@
               <li><form method="get" action="/profil">
                 <input type="hidden" id="emailProfil" name="email" value="">
                 <button type="submit" id="btnEmailP"  class="dropdown-item" onclick="emailIlet();">Profili Düzenle</button>
-                </form></li>
-              <!-- <li><a class="dropdown-item" href="/profil">Profili Düzenle</a></li> -->
+                </form></li>              
               <li>
                 <hr class="dropdown-divider">
               </li>
@@ -76,15 +75,16 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!-- <div class="input-group mb-3"> -->
+            
             <form method="post" action="/">
-              <span class="input-group-text" id="basic-addon1">@</span>
-              <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputKullanici" name="kullaniciAdi"
-                  placeholder="Kullanıcı Adı" required />
-                <label for="floatingInputAdSoyad">Kullanıcı Adı</label>
-              </div>
-              <!-- </div> -->
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInputKullanici" name="kullaniciAdi"
+                    placeholder="Kullanıcı Adı" required />
+                  <label for="floatingInputAdSoyad">Kullanıcı Adı</label>
+                </div>
+              </div>              
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInputAdSoyad" name="adSoyad" placeholder="Ad Soyad"
                   required />
@@ -110,8 +110,7 @@
             </button>
             <button type="submit" class="btn btn-primary">
               Kayıt Ol
-            </button>
-            <!-- onclick="Onay();" -->
+            </button>            
           </div>
           </form>
         </div>
@@ -127,8 +126,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form method="post" action="/" >
-              <!-- method="post" action="/" -->
+            <form method="post" action="/" >              
               <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="floatingInputEmailG" name="email" required
                   placeholder="name@example.com"  />
@@ -148,8 +146,7 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               İptal
             </button>
-            <button type="submit" class="btn btn-primary" onclick="girisYap();">Giriş Yap</button>
-            <!-- onclick="girisYap();" -->
+            <button type="submit" class="btn btn-primary" onclick="girisYap();">Giriş Yap</button>            
           </div>
           </form>
         </div>

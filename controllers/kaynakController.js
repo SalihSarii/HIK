@@ -1,18 +1,14 @@
 const { query } = require("express");
 const Kaynak = require("../models/Kaynak");
 
-exports.getAllKaynak = async (req,res)=>{
-    // await Kaynak.updateMany()
+exports.getAllKaynak = async (req,res)=>{    
     let kaynaklar = await Kaynak.find({})   
     let baslik = req.query.baslik
-    let _query= req.query
-    // let query= req.query.baslik
-    _query = JSON.stringify(_query)
-    console.log(_query) 
-    _query = JSON.parse(_query)
-    console.log(_query) 
-    if(_query){
-         kaynaklar = await Kaynak.find(_query).sort('yazar')   
+    let _query= req.query    
+    _query = JSON.stringify(_query)     
+    _query = JSON.parse(_query)    
+    if(_query){        
+        kaynaklar = await Kaynak.find({baslik: new RegExp(baslik, 'i') }).sort('baslik');         
     }       
 
     res.render('kaynakArama',{

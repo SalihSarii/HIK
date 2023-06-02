@@ -13,11 +13,19 @@
 body {
     background-color: #2D2316;
 }
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: #E2BAA1;
-    text-align: center;
-  }
+.btn-outline-secondary{
+    background-color: white;
+    color: #764927;
+}
+.btn-outline-secondary:hover{
+    background-color: #764927;
+    color: white;
+}
+.buton .btn-outline-secondary:hover{
+    color:#E2BAA1;
+}
+.frame {
+    height: 300px;
+    background: transparent no-repeat center;
+    background-size: contain;
+}

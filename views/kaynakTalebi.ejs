@@ -23,60 +23,61 @@
     </div>
     </header>
     <div class="container formlar"><br>
-      <!-- <form method="post" action="/kaynakTalep" class="form-group" > -->
-      <h2 class="renkler mb-3">Kaynak Talebi Formu</h2>
-      <div>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="inpKaynakBasligi" name="baslik" placeholder="Kaynağın Başlığı" />
-          <label for="inpKaynakBasligi">Kaynağın Başlığı</label>
+      <h2 class="renkler col-lg-8 col-md-10 mx-auto mb-3">Kaynak Talebi Formu</h2>
+
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <form method="post" action="/kaynakTalep" class="form-group">
+            <div class="control-group">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inpKaynakBasligi" name="baslik"
+                  placeholder="Kaynağın Başlığı" />
+                <label for="inpKaynakBasligi">Kaynağın Başlığı</label>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="slcTurler" aria-label="Floating label select example" name="kaynakturu">
+                  <option value="Ders Kitabı">Ders Kitabı</option>
+                  <option value="Okuma Kitabı">Okuma Kitabı</option>
+                  <option value="Sesli Kitap">Sesli Kitap</option>
+                  <option selected value="Diğer İçerikler">Diğer</option>
+                </select>
+                <label for="floatingSelect">Kaynağın Türü</label>
+              </div>
+
+              <div class="control-group">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="inpKaynakYazar" name="yazar"
+                    placeholder="Kaynağın Yazarı" />
+                  <label for="inpKaynakYili">Kaynağın Yazarı</label>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="inpKaynakYili" name="ciltno" placeholder="Cilt No " />
+                  <label for="inpKaynakYili">Cilt No</label>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" name="baskiNo" id="inpKaynakBaski" placeholder="Baskı No" />
+                  <label for="inpKaynakYili">Baskı No</label>
+                </div>
+              </div>
+
+              <div id="success"></div>
+              <div class="text-center mb-3"><button type="submit" class="btn btn-lg btn-outline-light submit"
+                  id="submit">Gönder</button></div>
+          </form>
         </div>
-        <div class="form-floating mb-3">
-          <select class="form-select" id="slcTurler" aria-label="Floating label select example" name="kaynakturu">
-            <option value="Ders Kitabı">Ders Kitabı</option>
-            <option value="Okuma Kitabı">Okuma Kitabı</option>
-            <option value="Sesli Kitap">Sesli Kitap</option>
-            <option selected value="4">Diğer</option>
-          </select>
-          <label for="floatingSelect">Kaynağın Türü</label>
-        </div>
-        <!-- <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="inpKaynakYili"
-            name="bas"
-            placeholder="Yılı"
-          />
-          <label for="inpKaynakYili">Basım Yılı</label>
-        </div> -->
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="inpKaynakYili" name="ciltno" placeholder="Cilt No " />
-          <label for="inpKaynakYili">Cilt No</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="baskiNo" id="inpKaynakBaski" placeholder="Baskı No" />
-          <label for="inpKaynakYili">Baskı No</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="inpKaynakYazar" name="yazar" placeholder="Kaynağın Yazarı" />
-          <label for="inpKaynakYili">Kaynağın Yazarı</label>
-        </div>
-        <div class="text-center mb-3"><button type="submit" class="btn btn-lg btn-outline-light btnGonder"
-            onclick="gonder();" id="btnGonder">Gönder</button></div>
-        <!-- </form>-->
-      </div>
+      </div> 
     </div>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
-      </div>
-    </footer>
     <!-- Scriptler -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/JS/login.js"></script>
-    <script src="/JS/kTalep.js"></script>
+    <script src="/JS/login.js"></script>    
 </body>
 
 </html>

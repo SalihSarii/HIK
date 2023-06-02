@@ -1,10 +1,3 @@
-// import { Schema, model, connect } from 'mongoose';
-// connect('mongodb://127.0.0.1/hik-test-db');
-// import { findOne } from "/models/Kullanici";
-
-//////////////Buradan öncesi deneme amaçlı. DB in login.js
-
-
 var adSoyad = document.getElementById("floatingInputAdSoyad").value,
     kullaniciAdi = document.getElementById("floatingInputKullanici").value,
     email = document.getElementById("floatingInputEmail").value,
@@ -20,7 +13,7 @@ if(girisYapildi == "true"){
     kullaniciProfili();
     document.getElementById("emailProfil").value = localStorage.getItem('email');
 }
-//console.log(girisYapildi);
+
 
 function girisDurumu(girisDurum,kulAdi){
     if(girisDurum==true && kulAdi != null){
@@ -67,7 +60,7 @@ function kullaniciProfili(){
     btnGirisYap.style.display = 'none';
     var profilKismi = document.getElementById("profil");
     profilKismi.style.display = 'block';
-    // localStorage.setItem('girisDegeri',"true");
+    
     
 }
 function cikis(){
@@ -91,34 +84,14 @@ function doluMuG(){
         return false;
     }
 }
-// function girisYap(){
-//     var emailG = document.getElementById("floatingInputEmailG").value,
-//         sifreG = document.getElementById("floatingInputPasswordG").value;
-//     var dolu = doluMuG()
-//     if(dolu == true){
-//         if(emailG == "1" && sifreG == "1"){
-//             modalGizleG();
-//         }
-//     }
-// }
+
 async function  girisYap(){
     var emailG = document.getElementById("floatingInputEmailG").value,
-        sifreG = document.getElementById("floatingInputPasswordG").value;
-        //alttaki iki satır sonra silinecek
+        sifreG = document.getElementById("floatingInputPasswordG").value;        
         localStorage.setItem('email',emailG)          
         var myModalEl = document.getElementById('girisYap')
         var girisYap = bootstrap.Modal.getInstance(myModalEl)
         girisYap.hide();   
-        // kullanici = await findOne({email:req.body.email});
-        // console.log(kullanici)
-        // if(kullanici.email== req.body.email && kullanici.sifre==req.body.sifre){
-        //     localStorage.setItem('email',emailG)          
-        //     modalGizleG();     
-        // }else{
-        //     alert('Giris Bilgilerinizi Kontrol Ediniz')
-        // }       
-              
-    
 }
 
 function modalGizleG(){

@@ -11,11 +11,11 @@ exports.getKaynakAramaPage = (req,res)=>{
 };
 
 exports.getKaynakTalebiPage = (req,res)=>{
-    res.status(200).render('kaynakTalebi2');
+    res.status(200).render('kaynakTalebi');
 };
 
 exports.getYardimPage = (req,res)=>{
-    res.status(200).render('yardim2');
+    res.status(200).render('yardim');
 };
 
 exports.getProfilPage = async (req,res)=>{    
