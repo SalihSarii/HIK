@@ -1,1 +1,1 @@
-"# Herkes İçin Kütüphane - HIK" 
+Herkes İçin Kütüphane - HIK
