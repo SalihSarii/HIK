@@ -33,9 +33,7 @@ exports.getAllKaynakIndex = async (req,res)=>{
 };
 
 exports.getFiltreKaynak = async (req,res)=>{  
-    const kaynaklar = await Kaynak.find({baslik:req.params.baslik});
-    console.log(kaynaklar)
-    console.log(req.params.kaynakturu)
+    const kaynaklar = await Kaynak.find({baslik:req.params.baslik});    
     res.render('kaynakArama',{
       kaynaklar
     })

@@ -12,6 +12,8 @@ function emailIlet(){
 if(girisYapildi == "true"){
     kullaniciProfili();
     document.getElementById("emailProfil").value = localStorage.getItem('email');
+}else{
+    localStorage.setItem('girisDegeri','false')
 }
 
 

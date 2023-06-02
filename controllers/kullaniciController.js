@@ -8,8 +8,7 @@ exports.kullaniciKayit = async (req,res)=>{
         adSoyad: req.body.adSoyad,
         email: req.body.email,
         sifre: req.body.sifre
-    })
-    console.log(req.body)
+    })    
     res.redirect('/')
 };
 
@@ -20,7 +19,7 @@ exports.kullaniciKayıtGiris = async(req,res)=>{
     const kaynakOkuma = await Kaynak.find({kaynakturu:"Okuma Kitabı"}).sort('-indirilmeSayisi').limit(3)
     const kaynakSesli = await Kaynak.find({kaynakturu:"Sesli Kitap"}).sort('-indirilmeSayisi').limit(3)
     const kaynakDiger = await Kaynak.find({kaynakturu:"Diğer İçerikler"}).sort('-indirilmeSayisi').limit(3)
-    // console.log(req.body)
+    
 
     if(girisTuru == 'kayit'){
         await Kullanici.create({ // Burası tamam çalışıyor
@@ -28,13 +27,11 @@ exports.kullaniciKayıtGiris = async(req,res)=>{
             adSoyad: req.body.adSoyad,
             email: req.body.email,
             sifre: req.body.sifre
-        })
-        // console.log(req.body)
+        })        
         res.redirect('/')
     }
     else{
-        kullanici = await Kullanici.findOne({email:req.body.email});
-        console.log(kullanici)
+        kullanici = await Kullanici.findOne({email:req.body.email});        
         var girisYapildi="2";
         if(!kullanici){
             girisYapildi = "false";            
@@ -47,8 +44,7 @@ exports.kullaniciKayıtGiris = async(req,res)=>{
                 girisYapildi            
             })
         }
-        else if(kullanici.email== req.body.email && kullanici.sifre==req.body.sifre){
-            console.log(kullanici.adSoyad,kullanici.sifre,kullanici.kullaniciAdi);            
+        else if(kullanici.email== req.body.email && kullanici.sifre==req.body.sifre){                      
             girisYapildi = "true";
             kulAdi = kullanici.kullaniciAdi;    
             
@@ -79,8 +75,7 @@ exports.kullaniciKayıtGiris = async(req,res)=>{
 exports.profilDuzenle = async (req,res)=>{
     girisYapildi=2;
     kullaniciAd = req.body.kullaniciAdi
-    kullanici = await Kullanici.findOneAndUpdate(req.body);
-    console.log(req.body)
+    kullanici = await Kullanici.findOneAndUpdate(req.body);    
     //index kaynaklar
     const kaynakDers = await Kaynak.find({kaynakturu:"Ders Kitabı"}).sort('-indirilmeSayisi').limit(3)   
     const kaynakOkuma = await Kaynak.find({kaynakturu:"Okuma Kitabı"}).sort('-indirilmeSayisi').limit(3)
