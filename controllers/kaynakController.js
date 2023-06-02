@@ -23,7 +23,7 @@ exports.getAllKaynakIndex = async (req,res)=>{
     const kaynakOkuma = await Kaynak.find({kaynakturu:"Okuma Kitabı"}).sort('-indirilmeSayisi').limit(3)
     const kaynakSesli = await Kaynak.find({kaynakturu:"Sesli Kitap"}).sort('-indirilmeSayisi').limit(3)
     const kaynakDiger = await Kaynak.find({kaynakturu:"Diğer İçerikler"}).sort('-indirilmeSayisi').limit(3)
-    res.render('Index',{
+    res.render('index',{
         kaynakDers,
         kaynakOkuma,
         kaynakSesli,
