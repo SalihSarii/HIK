@@ -5,10 +5,18 @@ exports.getAllKaynak = async (req,res)=>{
     let kaynaklar = await Kaynak.find({})   
     let baslik = req.query.baslik
     let _query= req.query    
-    _query = JSON.stringify(_query)     
-    _query = JSON.parse(_query)    
-    if(_query){        
-        kaynaklar = await Kaynak.find({baslik: new RegExp(baslik, 'i') }).sort('baslik');         
+    _query = JSON.stringify(_query)  
+    console.log(_query)   
+    _query = JSON.parse(_query)        
+    console.log(_query)
+    if(_query){
+        if(_query.baslik == undefined || _query.kaynakturu != undefined || _query.yazar != undefined || _query.basimYili != undefined || _query.ciltNo != undefined || _query.baskiNo != undefined || _query.dil != undefined){                           
+            kaynaklar = await Kaynak.find(_query).sort('baslik');   
+                     
+        }else{
+            kaynaklar = await Kaynak.find({baslik: new RegExp(baslik, 'i') }).sort('baslik');       
+        }        
+          
     }       
 
     res.render('kaynakArama',{
@@ -16,6 +24,8 @@ exports.getAllKaynak = async (req,res)=>{
         baslik
     })
 };
+
+
 
 exports.getAllKaynakIndex = async (req,res)=>{
     var girisYapildi="2";
@@ -32,10 +42,4 @@ exports.getAllKaynakIndex = async (req,res)=>{
     })
 };
 
-exports.getFiltreKaynak = async (req,res)=>{  
-    const kaynaklar = await Kaynak.find({baslik:req.params.baslik});    
-    res.render('kaynakArama',{
-      kaynaklar
-    })
-  }; 
 

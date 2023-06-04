@@ -16,247 +16,256 @@
 <body>
   <%- include('partials/_navigation') -%>
     <!-- MAIN -->
-    
-    <!-- Filtre içeriklerinin sıralanmış şekilde tutulmalarını sağlıyoruz -->
-    <% let yazarlar= []; let basimYillari= []; let ciltNolar= [];
-     let baskiNolar= []; let diller=[]; 
-     kaynaklar.forEach(function(kaynak){ yazarlar.push(kaynak.yazar);
-       basimYillari.push(kaynak.basimYili); ciltNolar.push(kaynak.ciltNo);
-        baskiNolar.push(kaynak.baskiNo); diller.push(kaynak.dil); });
-         yazarlar = [...new Set(yazarlar)].sort(); 
-          basimYillari = [...new Set(basimYillari)].sort(function(a, b){return a-b});
-           ciltNolar = [...new Set(ciltNolar)].sort(function(a, b){return a-b});
-            baskiNolar = [...new Set(baskiNolar)].sort(function(a, b){return a-b}); 
-            diller = [...new Set(diller)].sort(); 
-            %>
-    
-    <div class="main">
-      <!-- Sidebar -->
-      <div class="row">
-        <div class="col-auto">
-          <div class="flex-shrink-0 p-3 bg-white sticky-top overflow-auto" style="width: 280px; max-height:800px;">
-            <div class="renkler"></div>
-            <div class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-              <svg class="bi me-2" width="30" height="24">
-                <use xlink:href="#bootstrap"></use>
-              </svg>
-              <span class="fs-5 fw-semibold renkler">Filtreleme</span>
-            </div>
-            <ul class="list-unstyled ps-0">
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
-                  data-bs-target="#kaynakTuru" aria-expanded="true" type="button">
-                  Kaynak Türü
-                </button>
-                <div class="collapse show" id="kaynakTuru">
-                <form method="get" action="/kaynakArama/" >
-                  <div class="form-check mb-2">
-                    <input class="form-check-input" type="checkbox" class="checkbox"  value="Ders Kitabı" name="kaynakturu" id="Ders" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Ders Kitabı
-                    </label>
-                  </div>
-                  <div class="form-check mb-2">
-                    <input class="form-check-input" type="checkbox" class="checkbox" value="Okuma Kitabı" name="kaynakturu" id="Okuma" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Okuma Kitabı
-                    </label>
-                  </div>
-                  <div class="form-check mb-2">
-                    <input class="form-check-input" type="checkbox" class="checkbox"  value="Sesli Kitap" name="kaynakturu" id="sesli" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Sesli Kitap
-                    </label>
-                  </div>
-                  <div class="form-check mb-2">
-                    <input class="form-check-input" type="checkbox" class="checkbox"  value="Diğer İçerikler" name="kaynakturu" id="Diger" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Diğer İçerikler
-                    </label>
-                  </div>
-                
-                </div>
-              </li>
-              <li class="border-top my-3"></li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
-                  data-bs-target="#kaynakYazari" aria-expanded="false" type="button">
-                  Kaynağın Yazarı
-                </button>
-                <div class="collapse" id="kaynakYazari">
-                  <% yazarlar.forEach(function(item,index){  %>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault" name="yazar" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      <%= item %>                      
-                    </label>
-                  </div>
-                 <% }); %>
-                </div>
-              </li>
-              <li class="border-top my-3"></li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
-                  data-bs-target="#kaynakYili" aria-expanded="false" type="button">
-                  Yılı
-                </button>
-                <div class="collapse" id="kaynakYili">
-                  <% basimYillari.forEach(function(item,index){  %>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault" name="basimYili"/>
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <%= item %>                        
-                      </label>
-                    </div>
-                   <% }); %>
-                </div>
-              </li>
-              <li class="border-top my-3"></li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
-                  data-bs-target="#ciltNo" aria-expanded="false" type="button">
-                  Cilt No
-                </button>
-                <div class="collapse" id="ciltNo">
-                  <% ciltNolar.forEach(function(item,index){  %>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault" name="ciltNo" />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <%= item %>                        
-                      </label>
-                    </div>
-                   <% }); %>
-                </div>
-              </li>
-              <li class="border-top my-3"></li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
-                  data-bs-target="#baskiNo" aria-expanded="false" type="button">
-                  Baskı No
-                </button>
-                <div class="collapse" id="baskiNo">
-                  <% baskiNolar.forEach(function(item,index){  %>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault" name="baskiNo" />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <%= item %>                        
-                      </label>
-                    </div>
-                   <% }); %>
-                </div>
-              </li>
-              <li class="border-top my-3"></li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
-                  data-bs-target="#dil" aria-expanded="false" type="button">
-                  Diller
-                </button>
-                <div class="collapse" id="dil">
-                  <% diller.forEach(function(item,index){  %>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault" name="dil"/>
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <%= item %>                        
-                      </label>
-                    </div>
-                   <% }); %>
-                </div>
-              </li>
-              <% if(baslik!=null){ %>
-              <input type="hidden" name="baslik" value="<%= baslik %>" class="form-control">
-              <%}%>
-            </form>
-          </ul>
-          <div class="text-center pb-3 buton">
-            <button type="submit" class="btn btn-outline-secondary mb-3 mt-3" style="margin-right: auto;">
-              FILTRELE                
-            </button>
 
+    <!-- Filtre içeriklerinin sıralanmış şekilde tutulmalarını sağlıyoruz -->
+    <% let yazarlar=[]; let basimYillari=[]; let ciltNolar=[]; let baskiNolar=[]; let diller=[];
+      kaynaklar.forEach(function(kaynak){ yazarlar.push(kaynak.yazar); basimYillari.push(kaynak.basimYili);
+      ciltNolar.push(kaynak.ciltNo); baskiNolar.push(kaynak.baskiNo); diller.push(kaynak.dil); }); yazarlar=[...new
+      Set(yazarlar)].sort(); basimYillari=[...new Set(basimYillari)].sort(function(a, b){return a-b}); ciltNolar=[...new
+      Set(ciltNolar)].sort(function(a, b){return a-b}); baskiNolar=[...new Set(baskiNolar)].sort(function(a, b){return
+      a-b}); diller=[...new Set(diller)].sort(); %>
+
+      <div class="main">
+        <!-- Sidebar -->
+        <div class="row">
+          <div class="col-auto">
+            <div class="flex-shrink-0 p-3 bg-white sticky-top overflow-auto" style="width: 280px; max-height:800px;">
+              <form method="get" action="/kaynakArama">
+              <div class="renkler"></div>
+              <div class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <svg class="bi me-2" width="30" height="24">
+                  <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-5 fw-semibold renkler">Filtreleme</span>
+              </div>
+              <ul class="list-unstyled ps-0">
+                <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
+                    data-bs-target="#kaynakTuru" aria-expanded="true" type="button">
+                    Kaynak Türü
+                  </button>
+                
+                  <div class="collapse show" id="kaynakTuru">                    
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" class="checkbox" value="Ders Kitabı"
+                          name="kaynakturu" id="Ders" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Ders Kitabı
+                        </label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" class="checkbox" value="Okuma Kitabı"
+                          name="kaynakturu" id="Okuma" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Okuma Kitabı
+                        </label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" class="checkbox" value="Sesli Kitap"
+                          name="kaynakturu" id="sesli" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Sesli Kitap
+                        </label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" class="checkbox" value="Diğer İçerikler"
+                          name="kaynakturu" id="Diger" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Diğer İçerikler
+                        </label>
+                      </div>
+
+                  </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
+                    data-bs-target="#kaynakYazari" aria-expanded="false" type="button">
+                    Kaynağın Yazarı
+                  </button>
+                  <div class="collapse" id="kaynakYazari">
+                    <% yazarlar.forEach(function(item,index){ %>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault"
+                          name="yazar" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <%= item %>
+                        </label>
+                      </div>
+                      <% }); %>
+                  </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
+                    data-bs-target="#kaynakYili" aria-expanded="false" type="button">
+                    Yılı
+                  </button>
+                  <div class="collapse" id="kaynakYili">
+                    <% basimYillari.forEach(function(item,index){ %>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault"
+                          name="basimYili" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <%= item %>
+                        </label>
+                      </div>
+                      <% }); %>
+                  </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
+                    data-bs-target="#ciltNo" aria-expanded="false" type="button">
+                    Cilt No
+                  </button>
+                  <div class="collapse" id="ciltNo">
+                    <% ciltNolar.forEach(function(item,index){ %>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault"
+                          name="ciltNo" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <%= item %>
+                        </label>
+                      </div>
+                      <% }); %>
+                  </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
+                    data-bs-target="#baskiNo" aria-expanded="false" type="button">
+                    Baskı No
+                  </button>
+                  <div class="collapse" id="baskiNo">
+                    <% baskiNolar.forEach(function(item,index){ %>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault"
+                          name="baskiNo" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <%= item %>
+                        </label>
+                      </div>
+                      <% }); %>
+                  </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed renkler" data-bs-toggle="collapse"
+                    data-bs-target="#dil" aria-expanded="false" type="button">
+                    Diller
+                  </button>
+                  <div class="collapse" id="dil">
+                    <% diller.forEach(function(item,index){ %>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="<%= item %>" id="flexCheckDefault"
+                          name="dil" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <%= item %>
+                        </label>
+                      </div>
+                      <% }); %>
+                  </div>
+                </li>
+                <% if(baslik!=null){ %>
+                  <input type="hidden" name="baslik" value="<%= baslik %>" class="form-control">
+                  <%}%>         
+              </ul>
+              <div class="text-center pb-3 buton">
+                <button type="submit" class="btn btn-outline-secondary mb-3 mt-3 text-center pb-3 buton" style="margin-right: auto;">
+                  FILTRELE
+                </button>
+              </form>
+              </div>
+            
+            </div>
           </div>
-          </div>          
-        </div>
-        
+
           <% if(kaynaklar.length==0){%>
             <div class="col-auto">
-            <h4 style="color: white; margin-right: auto;"><%=baslik%> isimli bir kaynak bulunamadı :(</h4>
+              <h4 style="color: white; margin-right: auto;">
+                <%=baslik%> isimli bir kaynak bulunamadı :(
+              </h4>
             </div>
             <%} else{%>
-        
 
 
-        <div class="col-9">
-            <div class="container text-center logo">
-              <img src="/Icons/Koyu Gri Turuncu Perakende Logo.gif" alt="logo" class="rounded mx-auto d-block" width="200" />
-              <form method="get" action="/kaynakArama" class="tm-contact-form" enctype="multipart/form-data">
-                <div class="input-group">
-                  <div class="form-floating mb-3" style="max-width: 584px !important; margin-left: auto">
-                    <input type="text" class="form-control" placeholder="Kaynak ara" name="baslik" value="<%=baslik%>" id="submit" />                   
-                    <label for="floatingInputArama">Ara</label>
-                  </div>
-                  <button type="submit" class="btn btn-outline-secondary mb-3 border-0 " style="margin-right: auto">
-                    ARA
-                  </button>
-                </div>
-              </form>
-            </div>
-          <div class="" enctype="multipart/form-data">
-            <% kaynaklar.forEach(function(kaynak){ %>
-              <!--Kartın başı  -->
-              <div class="card mb-3 " >
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <div class="frame card-img-top" style="background-image: url('<%=kaynak.img%>');"></div>                   
-                    
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <%= kaynak.baslik %>
-                      </h5>
-                      <% if(kaynak.kaynakturu =="Diğer İçerikler"){%>
-                      <p class="card-text">
-                        Yayınlayan: <%= kaynak.yazar %>
-                      </p>
-                      <%}else{%>
-                        <p class="card-text">
-                          Yazar: <%= kaynak.yazar %>
-                        </p>
-                        <%}%>
-                      <p class="card-text">
-                        Tür: <%= kaynak.kaynakturu %>
-                      </p>
-                      <p class="card-text">
-                        Dil: <%= kaynak.dil %>
-                      </p>
-                      <p class="card-text">
-                        Yayımlanma Yılı: <%= kaynak.basimYili %>
-                      </p>
-                      <% if(kaynak.kaynakturu!="Diğer İçerikler"){%>
-                      <p class="card-text">
-                        Cilt No: <%= kaynak.ciltNo %>
-                      </p>
-                      <p class="card-text">
-                        Baskı No: <%= kaynak.baskiNo %>
-                      </p>
-                      <%}%>                      
-                      <a href="<%=kaynak.pdf%>" class="btn btn-outline-secondary">Kaynağı indir</a>
+
+              <div class="col-9">
+                <div class="container text-center logo">
+                  <img src="/Icons/Koyu Gri Turuncu Perakende Logo.gif" alt="logo" class="rounded mx-auto d-block"
+                    width="200" />
+                  <form method="get" action="/kaynakArama" class="tm-contact-form" enctype="multipart/form-data">
+                    <div class="input-group">
+                      <div class="form-floating mb-3" style="max-width: 584px !important; margin-left: auto">
+                        <input type="text" class="form-control" placeholder="Kaynak ara" name="baslik"
+                          value="<%=baslik%>" id="submit" />
+                        <label for="floatingInputArama">Ara</label>
+                      </div>
+                      <button type="submit" class="btn btn-outline-secondary mb-3 border-0 " style="margin-right: auto">
+                        ARA
+                      </button>
                     </div>
-                  </div>
+                  </form>
+                </div>
+                <div class="" enctype="multipart/form-data">
+                  <% kaynaklar.forEach(function(kaynak){ %>
+                    <!--Kartın başı  -->
+                    <div class="card mb-3 ">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <div class="frame card-img-top" style="background-image: url('<%=kaynak.img%>');"></div>
+
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <%= kaynak.baslik %>
+                            </h5>
+                            <% if(kaynak.kaynakturu=="Diğer İçerikler" ){%>
+                              <p class="card-text">
+                                Yayınlayan: <%= kaynak.yazar %>
+                              </p>
+                              <%}else{%>
+                                <p class="card-text">
+                                  Yazar: <%= kaynak.yazar %>
+                                </p>
+                                <%}%>
+                                  <p class="card-text">
+                                    Tür: <%= kaynak.kaynakturu %>
+                                  </p>
+                                  <p class="card-text">
+                                    Dil: <%= kaynak.dil %>
+                                  </p>
+                                  <p class="card-text">
+                                    Yayımlanma Yılı: <%= kaynak.basimYili %>
+                                  </p>
+                                  <% if(kaynak.kaynakturu!="Diğer İçerikler" ){%>
+                                    <p class="card-text">
+                                      Cilt No: <%= kaynak.ciltNo %>
+                                    </p>
+                                    <p class="card-text">
+                                      Baskı No: <%= kaynak.baskiNo %>
+                                    </p>
+                                    <%}%>
+                                      <a href="<%=kaynak.pdf%>" class="btn btn-outline-secondary">Kaynağı indir</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <%});%>
+                      <!-- Kartın sonu -->
                 </div>
               </div>
-              <%});%>
-                <!-- Kartın sonu -->
-          </div>
+              <%}%>
+
         </div>
-        <%}%>
-        
       </div>
-    </div>
-   
-    <!-- Scriptler -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="/JS/login.js"></script>    
+
+      <!-- Scriptler -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script defer src="/JS/login.js"></script>
 </body>
 
 </html>

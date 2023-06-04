@@ -34,7 +34,6 @@ app.use(express.json())
 //ROUTES
 app.get('/',kaynakController.getAllKaynakIndex);
 app.get('/kaynakArama',kaynakController.getAllKaynak);
-app.get('/kaynakArama/:kaynakturu',kaynakController.getFiltreKaynak);
 app.get('/kaynakTalebi', pageController.getKaynakTalebiPage);
 app.get('/yardim', pageController.getYardimPage);
 app.get('/profil', pageController.getProfilPage);
