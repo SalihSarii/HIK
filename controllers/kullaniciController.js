@@ -2,16 +2,6 @@ const Kullanici = require("../models/Kullanici");
 const Kaynak = require("../models/Kaynak")
 
 
-exports.kullaniciKayit = async (req,res)=>{
-    await Kullanici.create({
-        kullaniciAdi: req.body.kullaniciAdi,
-        adSoyad: req.body.adSoyad,
-        email: req.body.email,
-        sifre: req.body.sifre
-    })    
-    res.redirect('/')
-};
-
 exports.kullaniciKayıtGiris = async(req,res)=>{    
     var girisTuru = req.body.girisTuru
     //indexteki farklı türdeki popüler kitaplar
@@ -22,7 +12,7 @@ exports.kullaniciKayıtGiris = async(req,res)=>{
     
 
     if(girisTuru == 'kayit'){
-        await Kullanici.create({ // Burası tamam çalışıyor
+        await Kullanici.create({ 
             kullaniciAdi: req.body.kullaniciAdi,
             adSoyad: req.body.adSoyad,
             email: req.body.email,

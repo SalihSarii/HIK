@@ -46,7 +46,6 @@ app.post('/profil', kullaniciController.profilDuzenle)
 
 
 
-
 const port = 3000;
 app.listen(port, () => {  
   console.log(`Server ${port} portunda calistirildi.`);
