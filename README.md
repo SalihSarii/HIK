@@ -43,5 +43,3 @@ Masaüstü Uygulaması => https://github.com/melihtezel/Bilgisayar-Muhendisligi-
 <img src="https://github.com/user-attachments/assets/99a4eebc-6f4f-4aad-8507-501603a5f85d" width="800" height="400" />
 
 <b>Profil Düzenleme Sayfası Ekran Görüntüsü</b>
-
-![image](https://github.com/user-attachments/assets/99a4eebc-6f4f-4aad-8507-501603a5f85d)
